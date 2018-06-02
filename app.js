@@ -1,5 +1,5 @@
 // Global variables
-var word, // store player 1's input word 
+var word, // store player 1's input word
 answerArray, // tracks player 2's progress of guessing letters
 gameInProgress, // is game active or not
 numberOfLives, // tracks lives count
@@ -24,11 +24,11 @@ function newGame() {
   $('#player-1').show();
 }
 
-// The game will only start when player 1 clicks the start button 
+// The game will only start when player 1 clicks the start button
 function startGame() {
 
   word = document.getElementById("input-word").value;
-  
+
   // Check if player 1 actually input a word. Including a space assumes more than one word
   if (word.length === 0 || word.includes(' ')) {
     alert("Please enter a single word.");
@@ -54,7 +54,7 @@ function startGame() {
 };
 
 function guessLetter() {
-  
+
   if (gameInProgress === true && remainingLetters > 0) {
     // Get a guess from the player
     var guess = document.getElementById("input-guess").value.toLowerCase();
@@ -74,6 +74,7 @@ function guessLetter() {
         numberOfLives--;
         console.log("Lost a life ", numberOfLives);
         alert("Lost a life");
+        document.getElementById('heart5').style.display = 'none';
       } else {
         // Update the game state with the guess
         for (var j = 0; j < word.length; j++) {
@@ -84,7 +85,7 @@ function guessLetter() {
         }
         renderLetters();
       }
-    };    
+    };
   }
 
   checkForWin();
