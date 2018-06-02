@@ -22,7 +22,7 @@ function newGame() {
 
   $('#player-2').hide();
   $('#player-1').show();
-  // $('#lives').empty();
+  $('#lives').empty();
 }
 
 // The game will only start when player 1 clicks the start button
