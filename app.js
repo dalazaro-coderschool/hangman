@@ -22,6 +22,7 @@ function newGame() {
 
   $('#player-2').hide();
   $('#player-1').show();
+  // $('#lives').empty();
 }
 
 // The game will only start when player 1 clicks the start button
@@ -44,6 +45,10 @@ function startGame() {
 
     gameInProgress = true;
     remainingLetters = word.length;
+
+    for (let i=1; i <= 5; i++){
+      $('#lives').append(`<img src="https://imgur.com/VdgA6km.png" id="heart${i}">`)
+    }
 
     $('#player-1').hide();
     $('#player-2').show();
@@ -74,7 +79,9 @@ function guessLetter() {
         numberOfLives--;
         console.log("Lost a life ", numberOfLives);
         alert("Lost a life");
-        document.getElementById('heart5').style.display = 'none';
+        // if (numberOfLives > 1){
+          document.getElementById(`heart${numberOfLives}`).style.display = 'none';
+        // }
       } else {
         // Update the game state with the guess
         for (var j = 0; j < word.length; j++) {
