@@ -76,12 +76,10 @@ function guessLetter() {
 
       // If player 2 incorrectly guessed a letter
       if (!word.includes(guess)) {
+        document.getElementById(`heart${numberOfLives}`).style.display = 'none';
         numberOfLives--;
         console.log("Lost a life ", numberOfLives);
         alert("Lost a life");
-        // if (numberOfLives > 1){
-          document.getElementById(`heart${numberOfLives}`).style.display = 'none';
-        // }
       } else {
         // Update the game state with the guess
         for (var j = 0; j < word.length; j++) {
