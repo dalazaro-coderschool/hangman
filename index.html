@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>Hangman!</title>
+
+  
+  <link rel="stylesheet" href="./styles.css">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <h1>Hangman!</h1>
+  
+  <button id="new-game" onclick="newGame();">New Game</button>
+  
+  <div id="player-1">
+    <h2>Player 1: Please enter a single word.</h2>
+    
+    <form id="start-game-form" onsubmit="return false;">
+      <div>
+        <input type="text" id="input-word" />
+      </div>
+      <div>
+        <input type="submit" id="start-game" value="Start" onclick="startGame();" />
+      </div>
+    </form>
+  </div>
+  
+  <div id="player-2">
+    <h2>Player 2: Time to guess!</h2>
+
+    <div id="answer-array"></div>
+
+    <form id="guess-letter-form" onsubmit="return false;">
+      <div>
+        <label for="input-guess">Guess a single letter.</label>
+      </div>
+      <div>
+        <input type="text" id="input-guess" />
+      </div>
+      <div>
+        <input type="submit" id="guess-letter" value="Guess" onclick="guessLetter();" />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
